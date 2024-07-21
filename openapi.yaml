@@ -1,0 +1,25 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Minimal ping API server
+paths:
+  /hello:
+    get:
+      responses:
+        '200':
+          description: greets the caller
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+components:
+  schemas:
+    # base types
+    Message:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: Ben
