@@ -13,6 +13,7 @@ import (
 )
 
 func main() {
+	// initialize outside of lambda.Start to avoid reinitializing on every invocation
 	var (
 		container = di.New()
 		server    = api.NewServer(container)
